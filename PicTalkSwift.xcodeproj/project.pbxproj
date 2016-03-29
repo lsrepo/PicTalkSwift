@@ -1,0 +1,310 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		276498EF1CAA0E2F0009DF79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276498EE1CAA0E2F0009DF79 /* AppDelegate.swift */; };
+		276498F11CAA0E2F0009DF79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276498F01CAA0E2F0009DF79 /* ViewController.swift */; };
+		276498F41CAA0E2F0009DF79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 276498F21CAA0E2F0009DF79 /* Main.storyboard */; };
+		276498F71CAA0E2F0009DF79 /* PicTalkSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 276498F51CAA0E2F0009DF79 /* PicTalkSwift.xcdatamodeld */; };
+		276498F91CAA0E2F0009DF79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 276498F81CAA0E2F0009DF79 /* Assets.xcassets */; };
+		276498FC1CAA0E2F0009DF79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 276498FA1CAA0E2F0009DF79 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		276498EB1CAA0E2F0009DF79 /* PicTalkSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicTalkSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		276498EE1CAA0E2F0009DF79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		276498F01CAA0E2F0009DF79 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		276498F31CAA0E2F0009DF79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		276498F61CAA0E2F0009DF79 /* PicTalkSwift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PicTalkSwift.xcdatamodel; sourceTree = "<group>"; };
+		276498F81CAA0E2F0009DF79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		276498FB1CAA0E2F0009DF79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		276498FD1CAA0E2F0009DF79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		276498E81CAA0E2F0009DF79 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		276498E21CAA0E2F0009DF79 = {
+			isa = PBXGroup;
+			children = (
+				276498ED1CAA0E2F0009DF79 /* PicTalkSwift */,
+				276498EC1CAA0E2F0009DF79 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		276498EC1CAA0E2F0009DF79 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				276498EB1CAA0E2F0009DF79 /* PicTalkSwift.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		276498ED1CAA0E2F0009DF79 /* PicTalkSwift */ = {
+			isa = PBXGroup;
+			children = (
+				276498EE1CAA0E2F0009DF79 /* AppDelegate.swift */,
+				276498F01CAA0E2F0009DF79 /* ViewController.swift */,
+				276498F21CAA0E2F0009DF79 /* Main.storyboard */,
+				276498F81CAA0E2F0009DF79 /* Assets.xcassets */,
+				276498FA1CAA0E2F0009DF79 /* LaunchScreen.storyboard */,
+				276498FD1CAA0E2F0009DF79 /* Info.plist */,
+				276498F51CAA0E2F0009DF79 /* PicTalkSwift.xcdatamodeld */,
+			);
+			path = PicTalkSwift;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		276498EA1CAA0E2F0009DF79 /* PicTalkSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 276499001CAA0E2F0009DF79 /* Build configuration list for PBXNativeTarget "PicTalkSwift" */;
+			buildPhases = (
+				276498E71CAA0E2F0009DF79 /* Sources */,
+				276498E81CAA0E2F0009DF79 /* Frameworks */,
+				276498E91CAA0E2F0009DF79 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PicTalkSwift;
+			productName = PicTalkSwift;
+			productReference = 276498EB1CAA0E2F0009DF79 /* PicTalkSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		276498E31CAA0E2F0009DF79 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Pak;
+				TargetAttributes = {
+					276498EA1CAA0E2F0009DF79 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 276498E61CAA0E2F0009DF79 /* Build configuration list for PBXProject "PicTalkSwift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 276498E21CAA0E2F0009DF79;
+			productRefGroup = 276498EC1CAA0E2F0009DF79 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				276498EA1CAA0E2F0009DF79 /* PicTalkSwift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		276498E91CAA0E2F0009DF79 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				276498FC1CAA0E2F0009DF79 /* LaunchScreen.storyboard in Resources */,
+				276498F91CAA0E2F0009DF79 /* Assets.xcassets in Resources */,
+				276498F41CAA0E2F0009DF79 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		276498E71CAA0E2F0009DF79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				276498F71CAA0E2F0009DF79 /* PicTalkSwift.xcdatamodeld in Sources */,
+				276498F11CAA0E2F0009DF79 /* ViewController.swift in Sources */,
+				276498EF1CAA0E2F0009DF79 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		276498F21CAA0E2F0009DF79 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				276498F31CAA0E2F0009DF79 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		276498FA1CAA0E2F0009DF79 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				276498FB1CAA0E2F0009DF79 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		276498FE1CAA0E2F0009DF79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		276498FF1CAA0E2F0009DF79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		276499011CAA0E2F0009DF79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PicTalkSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = paklau.info.PicTalkSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		276499021CAA0E2F0009DF79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PicTalkSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = paklau.info.PicTalkSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		276498E61CAA0E2F0009DF79 /* Build configuration list for PBXProject "PicTalkSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				276498FE1CAA0E2F0009DF79 /* Debug */,
+				276498FF1CAA0E2F0009DF79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		276499001CAA0E2F0009DF79 /* Build configuration list for PBXNativeTarget "PicTalkSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				276499011CAA0E2F0009DF79 /* Debug */,
+				276499021CAA0E2F0009DF79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		276498F51CAA0E2F0009DF79 /* PicTalkSwift.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				276498F61CAA0E2F0009DF79 /* PicTalkSwift.xcdatamodel */,
+			);
+			currentVersion = 276498F61CAA0E2F0009DF79 /* PicTalkSwift.xcdatamodel */;
+			path = PicTalkSwift.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 276498E31CAA0E2F0009DF79 /* Project object */;
+}
