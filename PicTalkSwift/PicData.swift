@@ -10,37 +10,46 @@ import Foundation
 
 
 class PicData{
+     // Need manual input
     let keys = ["english","swedish","arabic","file","category"]
-    var allPics = NSArray()
+    var allData = NSArray()
     
     var arrayCore = [[String:String]]()
     var arrayHealth = [[String:String]]()
+    var allPic = [[String:String]]()
+    var onePic = [String:String]()
     
-    
-    var element = [String:String]()
+    // Need manual input
+    let allCategories = ["Core","Health", "Food", "Shopping", "Transportation","Daily life","Feelings"]
+    var numberOfItems = [0,0,0,0,0,0,0] //7 categories
     
     func initialize(){
+        print("dataSource initializing")
         if let path = NSBundle.mainBundle().pathForResource("PicData", ofType:"plist"){
             if  let myDict = NSArray(contentsOfFile: path){
-                allPics = myDict
+                allData = myDict
             }
         }
-        for pic in allPics {
+        
+        //Parse string to dictionary
+        for data in allData {
             for key in keys{
-               element.updateValue(pic.valueForKey(key) as! String, forKey: key)
+               onePic.updateValue(data.valueForKey(key) as! String, forKey: key)
             }
             
-            switch pic.valueForKey("category") as! String {
-            case  "Core":
-                arrayCore.append(element)
-            case  "Health":
-                arrayHealth.append(element)
-            //Feelings, Food, Shopping, Transportation
-            default: break
-            }
+            allPic.append(onePic)
+        }
+        
+        //Count number of items in each categories
+        for onePic in allPic{
+            let category = onePic["category"]!
+            let index = allCategories.indexOf(category)
+            //print(category,index)
+            numberOfItems[index!] += 1
             
         }
-        print(arrayCore.count)
+        
+        
+        print(numberOfItems)
     }
-    
 }

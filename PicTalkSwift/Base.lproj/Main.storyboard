@@ -3,13 +3,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Test-->
+        <!--Category 1-->
         <scene sceneID="m2v-DX-l4h">
             <objects>
-                <collectionViewController id="m23-64-SxL" customClass="AllPicCollectionViewController" customModule="PicTalkSwift" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="43R-Fj-fJf">
+                <collectionViewController id="m23-64-SxL" userLabel="Category 1" customClass="AllPicCollectionViewController" customModule="PicTalkSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="43R-Fj-fJf" customClass="AllPicUICollectionView" customModule="PicTalkSwift" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.92459148168563843" green="0.96649163961410522" blue="0.87093836069107056" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -20,7 +21,7 @@
                             <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="yellow" id="L3e-Lj-qsM" customClass="AllPicCollectionViewCell" customModule="PicTalkSwift" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="picCell" id="L3e-Lj-qsM" customClass="AllPicCollectionViewCell" customModule="PicTalkSwift" customModuleProvider="target">
                                 <rect key="frame" x="20" y="20" width="133" height="165"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -59,15 +60,16 @@
                         </connections>
                     </collectionView>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Item" id="6Ml-pg-P5U"/>
-                    <navigationItem key="navigationItem" title="Test" id="2FB-5Q-3D7"/>
+                    <tabBarItem key="tabBarItem" title="Core" image="category1.png" id="6Ml-pg-P5U"/>
+                    <navigationItem key="navigationItem" id="2FB-5Q-3D7"/>
                     <connections>
                         <outlet property="mainView" destination="43R-Fj-fJf" id="cbE-io-Zmi"/>
+                        <segue destination="fBx-p9-Pfu" kind="show" id="yFr-cE-5VL"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J5L-Xv-dxb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6915" y="451"/>
+            <point key="canvasLocation" x="5087" y="1451"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="D4s-Bq-rbA">
@@ -87,24 +89,535 @@
             </objects>
             <point key="canvasLocation" x="5291" y="451"/>
         </scene>
+        <!--Sentence View-->
+        <scene sceneID="HvI-Gh-NPo">
+            <objects>
+                <tableViewController id="eTO-Jo-Jhj" customClass="SentenceTableViewController" customModule="PicTalkSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="114" sectionHeaderHeight="28" sectionFooterHeight="28" id="H02-gu-tl2" customClass="SentenceTableView" customModule="PicTalkSwift" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="sentenceCell" rowHeight="114" id="d1b-fk-Xhf" customClass="SentenceTableViewCell" customModule="PicTalkSwift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="114"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d1b-fk-Xhf" id="LVr-r1-mYI">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="114"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Native:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aae-lS-inj">
+                                            <rect key="frame" x="116" y="10" width="466" height="41"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <color key="textColor" red="0.95631009619999996" green="0.51008822480000005" blue="0.15487820369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qqV-A0-Ecd">
+                                            <rect key="frame" x="8" y="0.0" width="100" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="MVI-h2-Mz9"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Translated" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSr-cR-LuN">
+                                            <rect key="frame" x="116" y="51" width="466" height="41"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <color key="textColor" red="0.95631009619999996" green="0.51008822480000005" blue="0.15487820369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="qqV-A0-Ecd" secondAttribute="bottom" constant="5.5" id="1Aa-a1-3zB"/>
+                                        <constraint firstItem="qqV-A0-Ecd" firstAttribute="top" secondItem="LVr-r1-mYI" secondAttribute="top" id="Hno-ue-8Wt"/>
+                                        <constraint firstItem="Aae-lS-inj" firstAttribute="leading" secondItem="qqV-A0-Ecd" secondAttribute="trailing" constant="8" symbolic="YES" id="K1F-oD-7KD"/>
+                                        <constraint firstItem="WSr-cR-LuN" firstAttribute="leading" secondItem="qqV-A0-Ecd" secondAttribute="trailing" constant="8" symbolic="YES" id="Lmf-di-7x5"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Aae-lS-inj" secondAttribute="trailing" constant="10" id="ONF-5y-Rtd"/>
+                                        <constraint firstAttribute="topMargin" secondItem="Aae-lS-inj" secondAttribute="top" id="PfB-5z-zBI"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="qqV-A0-Ecd" secondAttribute="bottom" constant="5.5" id="XZT-hD-HaA"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="WSr-cR-LuN" secondAttribute="bottom" constant="8" id="Y46-ku-ugx"/>
+                                        <constraint firstItem="qqV-A0-Ecd" firstAttribute="centerY" secondItem="LVr-r1-mYI" secondAttribute="centerY" id="azi-TE-80F"/>
+                                        <constraint firstAttribute="topMargin" secondItem="Aae-lS-inj" secondAttribute="top" id="lqO-lS-KfI"/>
+                                        <constraint firstItem="qqV-A0-Ecd" firstAttribute="centerY" secondItem="LVr-r1-mYI" secondAttribute="centerY" id="svw-qj-V5A"/>
+                                        <constraint firstItem="qqV-A0-Ecd" firstAttribute="leading" secondItem="LVr-r1-mYI" secondAttribute="leadingMargin" id="y4M-eq-eXo"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="1Aa-a1-3zB"/>
+                                            <exclude reference="Hno-ue-8Wt"/>
+                                            <exclude reference="svw-qj-V5A"/>
+                                            <exclude reference="PfB-5z-zBI"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nativeLabel" destination="Aae-lS-inj" id="vq1-Ig-Pql"/>
+                                    <outlet property="picView" destination="qqV-A0-Ecd" id="Aqc-G4-iY3"/>
+                                    <outlet property="transLabel" destination="WSr-cR-LuN" id="GeB-XM-IRB"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="eTO-Jo-Jhj" id="uDE-IA-02o"/>
+                            <outlet property="delegate" destination="eTO-Jo-Jhj" id="Rdp-RD-jhe"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Sentence View" id="d3R-bI-gGJ">
+                        <barButtonItem key="rightBarButtonItem" title="Close" id="d7P-JY-IIJ">
+                            <connections>
+                                <action selector="dismIssVC:" destination="eTO-Jo-Jhj" id="IUg-wd-mJJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="closeButton" destination="d7P-JY-IIJ" id="t74-XU-ziq"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BKV-Rd-L75" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6907" y="-281"/>
+        </scene>
         <!--Category-->
         <scene sceneID="9vp-LX-Fec">
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="I99-bw-16t" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Category" id="JNU-th-FMn"/>
+                    <navigationItem key="navigationItem" title="Category" id="JNU-th-FMn">
+                        <barButtonItem key="rightBarButtonItem" title="Sentence View" id="BH7-Hj-xDb">
+                            <connections>
+                                <segue destination="6Qo-jy-QNG" kind="presentation" id="g4Q-qh-yMC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="np0-Zg-Kvm">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="m23-64-SxL" kind="relationship" relationship="viewControllers" id="Fe1-ne-9aY"/>
+                        <segue destination="fBx-p9-Pfu" kind="relationship" relationship="viewControllers" id="w1k-QF-smE"/>
+                        <segue destination="CQu-mD-0nZ" kind="relationship" relationship="viewControllers" id="Pyu-dc-Ptd"/>
+                        <segue destination="Lrw-78-Le7" kind="relationship" relationship="viewControllers" id="OnM-eo-qaZ"/>
+                        <segue destination="TdG-Vx-b7J" kind="relationship" relationship="viewControllers" id="2YL-76-hXP"/>
+                        <segue destination="fWQ-O6-Ajf" kind="relationship" relationship="viewControllers" id="Yxz-Wu-s5H"/>
+                        <segue destination="Rbw-HD-rCk" kind="relationship" relationship="viewControllers" id="rz9-je-eRZ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IEN-c9-ZoV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6103" y="451"/>
+            <point key="canvasLocation" x="6095" y="451"/>
+        </scene>
+        <!--Category 2-->
+        <scene sceneID="4Xb-4V-UaY">
+            <objects>
+                <collectionViewController id="fBx-p9-Pfu" userLabel="Category 2" customClass="Category2ViewController" customModule="PicTalkSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="E5v-wo-EgV">
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.94381925870000005" blue="0.0020686525409999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="10" id="lgw-Q5-KPc">
+                            <size key="itemSize" width="133" height="165"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="picCell" id="IbW-Yu-XlJ" customClass="AllPicCollectionViewCell" customModule="PicTalkSwift" customModuleProvider="target">
+                                <rect key="frame" x="20" y="20" width="133" height="165"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="133" height="165"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uUC-qd-jSs">
+                                            <rect key="frame" x="0.0" y="0.0" width="133" height="135"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNx-qe-DVd">
+                                            <rect key="frame" x="0.0" y="136" width="133" height="29"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Label">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="18" name="HelveticaNeue-Medium"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="labelNative" destination="WNx-qe-DVd" id="XQ8-vs-acp"/>
+                                    <outlet property="picCell" destination="uUC-qd-jSs" id="Zlk-Um-htn"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="fBx-p9-Pfu" id="0XY-BN-cue"/>
+                            <outlet property="delegate" destination="fBx-p9-Pfu" id="Qp5-2Y-qYj"/>
+                        </connections>
+                    </collectionView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <tabBarItem key="tabBarItem" title="Health" image="category2.png" id="9Qd-Ru-GDh"/>
+                    <navigationItem key="navigationItem" title="Test" id="B2A-8H-t66"/>
+                    <connections>
+                        <outlet property="mainView" destination="E5v-wo-EgV" id="1Et-0P-i6f"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sTd-G4-vl3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5805" y="1451"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gvN-ui-Rh3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6Qo-jy-QNG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TDW-dU-bRF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eTO-Jo-Jhj" kind="relationship" relationship="rootViewController" id="z1X-cd-fRG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qet-vb-zdq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6095" y="-523"/>
+        </scene>
+        <!--Category 3-->
+        <scene sceneID="4Wd-BI-gZf">
+            <objects>
+                <collectionViewController id="CQu-mD-0nZ" userLabel="Category 3" customClass="Category3ViewController" customModule="PicTalkSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="LYx-Od-gp7" customClass="AllPicUICollectionView" customModule="PicTalkSwift" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.92459148170000005" green="0.96649163959999995" blue="0.87093836069999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="10" id="yNo-VO-gHh">
+                            <size key="itemSize" width="133" height="165"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="picCell" id="qhL-cx-6Gg" customClass="AllPicCollectionViewCell" customModule="PicTalkSwift" customModuleProvider="target">
+                                <rect key="frame" x="20" y="20" width="133" height="165"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="133" height="165"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pSR-gQ-V2i">
+                                            <rect key="frame" x="0.0" y="0.0" width="133" height="135"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akl-4o-bYP">
+                                            <rect key="frame" x="0.0" y="136" width="133" height="29"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Label">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="18" name="HelveticaNeue-Medium"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="labelNative" destination="akl-4o-bYP" id="mw8-Sk-R7e"/>
+                                    <outlet property="picCell" destination="pSR-gQ-V2i" id="H3G-7B-eGW"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="CQu-mD-0nZ" id="iHb-F4-lyl"/>
+                            <outlet property="delegate" destination="CQu-mD-0nZ" id="gBc-dO-bnE"/>
+                        </connections>
+                    </collectionView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <tabBarItem key="tabBarItem" title="Food" image="category3.png" id="W6w-wt-eRx"/>
+                    <navigationItem key="navigationItem" title="Category 3" id="fq2-5U-qBa"/>
+                    <connections>
+                        <outlet property="mainView" destination="LYx-Od-gp7" id="i6Y-Gt-Cpg"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U2X-tY-5cT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6439" y="1457"/>
+        </scene>
+        <!--Category 6-->
+        <scene sceneID="MZx-sz-cvf">
+            <objects>
+                <collectionViewController id="fWQ-O6-Ajf" userLabel="Category 6" customClass="Category6ViewController" customModule="PicTalkSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Q3Y-a8-vSb" customClass="AllPicUICollectionView" customModule="PicTalkSwift" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.92459148170000005" green="0.96649163959999995" blue="0.87093836069999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="10" id="dAa-fs-8Wz">
+                            <size key="itemSize" width="133" height="165"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="picCell" id="3Ty-UJ-CzV" customClass="AllPicCollectionViewCell" customModule="PicTalkSwift" customModuleProvider="target">
+                                <rect key="frame" x="20" y="20" width="133" height="165"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="133" height="165"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8o0-Gp-5PM">
+                                            <rect key="frame" x="0.0" y="0.0" width="133" height="135"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLk-n8-o00">
+                                            <rect key="frame" x="0.0" y="136" width="133" height="29"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Label">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="18" name="HelveticaNeue-Medium"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="labelNative" destination="HLk-n8-o00" id="Xrj-Vy-pEs"/>
+                                    <outlet property="picCell" destination="8o0-Gp-5PM" id="EXR-dT-a08"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="fWQ-O6-Ajf" id="mvW-Rh-8qM"/>
+                            <outlet property="delegate" destination="fWQ-O6-Ajf" id="8zw-PC-kT6"/>
+                        </connections>
+                    </collectionView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <tabBarItem key="tabBarItem" title="Daily LIfe" image="category6.png" id="gx0-mY-GZ5"/>
+                    <navigationItem key="navigationItem" title="Daily LIfe" id="3Z9-ij-C2q"/>
+                    <connections>
+                        <outlet property="mainView" destination="Q3Y-a8-vSb" id="NXg-ud-m2L"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9cU-2E-L7L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8395" y="1451"/>
+        </scene>
+        <!--Category 5-->
+        <scene sceneID="a3L-UV-jyJ">
+            <objects>
+                <collectionViewController id="TdG-Vx-b7J" userLabel="Category 5" customClass="Category5ViewController" customModule="PicTalkSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="hFP-Ay-JwD" customClass="AllPicUICollectionView" customModule="PicTalkSwift" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.92459148170000005" green="0.96649163959999995" blue="0.87093836069999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="10" id="wsN-um-W0B">
+                            <size key="itemSize" width="133" height="165"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="picCell" id="Vo2-jc-9C8" customClass="AllPicCollectionViewCell" customModule="PicTalkSwift" customModuleProvider="target">
+                                <rect key="frame" x="20" y="20" width="133" height="165"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="133" height="165"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4W5-aS-NaH">
+                                            <rect key="frame" x="0.0" y="0.0" width="133" height="135"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qsj-lO-L5T">
+                                            <rect key="frame" x="0.0" y="136" width="133" height="29"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Label">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="18" name="HelveticaNeue-Medium"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="labelNative" destination="Qsj-lO-L5T" id="e8v-WN-0tj"/>
+                                    <outlet property="picCell" destination="4W5-aS-NaH" id="7J3-Ai-WWZ"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="TdG-Vx-b7J" id="JlT-BN-uOr"/>
+                            <outlet property="delegate" destination="TdG-Vx-b7J" id="XEj-qa-ewz"/>
+                        </connections>
+                    </collectionView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <tabBarItem key="tabBarItem" title="Transportaion" image="category5.png" id="lyp-Rb-5rv"/>
+                    <navigationItem key="navigationItem" title="Transportaion" id="NES-Jw-XaN"/>
+                    <connections>
+                        <outlet property="mainView" destination="hFP-Ay-JwD" id="g68-If-2UB"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D0K-zV-7y5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7743" y="1451"/>
+        </scene>
+        <!--Category 4-->
+        <scene sceneID="NRl-Ki-vit">
+            <objects>
+                <collectionViewController id="Lrw-78-Le7" userLabel="Category 4" customClass="Category4ViewController" customModule="PicTalkSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="9Tj-Hc-bNN" customClass="AllPicUICollectionView" customModule="PicTalkSwift" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.92459148170000005" green="0.96649163959999995" blue="0.87093836069999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="10" id="ckd-U2-FFP">
+                            <size key="itemSize" width="133" height="165"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="picCell" id="2iS-2m-t4P" customClass="AllPicCollectionViewCell" customModule="PicTalkSwift" customModuleProvider="target">
+                                <rect key="frame" x="20" y="20" width="133" height="165"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="133" height="165"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gUE-4q-3IB">
+                                            <rect key="frame" x="0.0" y="0.0" width="133" height="135"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OrW-Aa-oX1">
+                                            <rect key="frame" x="0.0" y="136" width="133" height="29"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Label">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="18" name="HelveticaNeue-Medium"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="labelNative" destination="OrW-Aa-oX1" id="WfY-NV-RQ9"/>
+                                    <outlet property="picCell" destination="gUE-4q-3IB" id="Qqk-2o-lZb"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Lrw-78-Le7" id="leG-wO-wYX"/>
+                            <outlet property="delegate" destination="Lrw-78-Le7" id="7M9-yz-wk5"/>
+                        </connections>
+                    </collectionView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <tabBarItem key="tabBarItem" title="Shopping" image="category4.png" id="FbZ-Zg-vwv"/>
+                    <navigationItem key="navigationItem" title="Shopping" id="HV1-P1-NhP"/>
+                    <connections>
+                        <outlet property="mainView" destination="9Tj-Hc-bNN" id="69c-cN-8w0"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7UY-gj-tfX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7087" y="1457"/>
+        </scene>
+        <!--Category 7-->
+        <scene sceneID="IUQ-7z-Vnu">
+            <objects>
+                <collectionViewController id="Rbw-HD-rCk" userLabel="Category 7" customClass="Category7ViewController" customModule="PicTalkSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="5Lx-uE-pln" customClass="AllPicUICollectionView" customModule="PicTalkSwift" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.92459148170000005" green="0.96649163959999995" blue="0.87093836069999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="10" id="ea0-KY-jak">
+                            <size key="itemSize" width="133" height="165"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="picCell" id="Lfr-2f-9fK" customClass="AllPicCollectionViewCell" customModule="PicTalkSwift" customModuleProvider="target">
+                                <rect key="frame" x="20" y="20" width="133" height="165"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="133" height="165"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T9O-rT-M10">
+                                            <rect key="frame" x="0.0" y="0.0" width="133" height="135"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4R-5u-Fvs">
+                                            <rect key="frame" x="0.0" y="136" width="133" height="29"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Label">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="18" name="HelveticaNeue-Medium"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="labelNative" destination="M4R-5u-Fvs" id="esL-sc-dJJ"/>
+                                    <outlet property="picCell" destination="T9O-rT-M10" id="dV9-qO-9B8"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Rbw-HD-rCk" id="OHo-cM-Gsr"/>
+                            <outlet property="delegate" destination="Rbw-HD-rCk" id="Uyc-GH-kfw"/>
+                        </connections>
+                    </collectionView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <tabBarItem key="tabBarItem" title="Feelings" image="category7.png" id="4Ng-ra-xjl"/>
+                    <navigationItem key="navigationItem" title="Feelings" id="Ygj-2h-Fdj" userLabel="Category 7"/>
+                    <connections>
+                        <outlet property="mainView" destination="5Lx-uE-pln" id="1Hv-uK-6yN"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="piO-C6-VZ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8387" y="782"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="category1.png" width="30" height="30"/>
+        <image name="category2.png" width="32" height="27"/>
+        <image name="category3.png" width="33" height="77"/>
+        <image name="category4.png" width="31" height="26"/>
+        <image name="category5.png" width="28" height="30"/>
+        <image name="category6.png" width="28" height="30"/>
+        <image name="category7.png" width="31" height="29"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="yFr-cE-5VL"/>
+    </inferredMetricsTieBreakers>
 </document>

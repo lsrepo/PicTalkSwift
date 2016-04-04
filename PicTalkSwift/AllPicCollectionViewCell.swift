@@ -14,7 +14,4 @@ class AllPicCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var picCell: UIImageView!
     
-    
-    var isPicInSentance:Bool = false
-    
 }

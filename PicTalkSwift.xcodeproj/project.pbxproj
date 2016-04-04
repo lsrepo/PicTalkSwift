@@ -230,6 +230,12 @@
 		276499041CAA0F160009DF79 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 276499031CAA0F160009DF79 /* data.json */; };
 		276499061CAA16A60009DF79 /* PicData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 276499051CAA16A60009DF79 /* PicData.plist */; };
 		276499101CAA7E0B0009DF79 /* AllPicCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2764990F1CAA7E0B0009DF79 /* AllPicCollectionViewController.swift */; };
+		27FE188E1CB1302800476BCB /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FE188D1CB1302800476BCB /* CategoriesViewController.swift */; };
+		27FE18901CB142DE00476BCB /* shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FE188F1CB142DE00476BCB /* shared.swift */; };
+		27FE18921CB197BE00476BCB /* SentenceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FE18911CB197BE00476BCB /* SentenceTableViewController.swift */; };
+		27FE18941CB197CD00476BCB /* SentenceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FE18931CB197CD00476BCB /* SentenceTableViewCell.swift */; };
+		27FE18C71CB1ACB300476BCB /* SentenceTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FE18C61CB1ACB300476BCB /* SentenceTableView.swift */; };
+		27FE18C91CB1C50200476BCB /* CategoryTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FE18C81CB1C50200476BCB /* CategoryTabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -458,6 +464,12 @@
 		276499031CAA0F160009DF79 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		276499051CAA16A60009DF79 /* PicData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PicData.plist; sourceTree = "<group>"; };
 		2764990F1CAA7E0B0009DF79 /* AllPicCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AllPicCollectionViewController.swift; path = ../AllPicCollectionViewController.swift; sourceTree = "<group>"; };
+		27FE188D1CB1302800476BCB /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		27FE188F1CB142DE00476BCB /* shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = shared.swift; sourceTree = "<group>"; };
+		27FE18911CB197BE00476BCB /* SentenceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentenceTableViewController.swift; sourceTree = "<group>"; };
+		27FE18931CB197CD00476BCB /* SentenceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentenceTableViewCell.swift; sourceTree = "<group>"; };
+		27FE18C61CB1ACB300476BCB /* SentenceTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentenceTableView.swift; sourceTree = "<group>"; };
+		27FE18C81CB1C50200476BCB /* CategoryTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -725,14 +737,29 @@
 			isa = PBXGroup;
 			children = (
 				276498F21CAA0E2F0009DF79 /* Main.storyboard */,
-				275ED1231CAC973A007414D6 /* PicData.swift */,
+				27FE18C81CB1C50200476BCB /* CategoryTabBarViewController.swift */,
+				27FE18C61CB1ACB300476BCB /* SentenceTableView.swift */,
+				27FE18911CB197BE00476BCB /* SentenceTableViewController.swift */,
+				27FE18931CB197CD00476BCB /* SentenceTableViewCell.swift */,
 				2764990F1CAA7E0B0009DF79 /* AllPicCollectionViewController.swift */,
+				27FE188D1CB1302800476BCB /* CategoriesViewController.swift */,
+				27FE188F1CB142DE00476BCB /* shared.swift */,
+				275ED1231CAC973A007414D6 /* PicData.swift */,
 				275ED11D1CAC90BD007414D6 /* AllPicCollectionViewCell.swift */,
 				275ED11F1CAC9158007414D6 /* AllPicUICollectionView.swift */,
+				2765B0891CB1DE1C0062434D /* ff.pngw Group */,
 				275ED1261CACA2A3007414D6 /* Pics */,
 				275ED11C1CAC8F40007414D6 /* Supporting Files */,
 			);
 			path = PicTalkSwift;
+			sourceTree = "<group>";
+		};
+		2765B0891CB1DE1C0062434D /* ff.pngw Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "ff.pngw Group";
+			path = pics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1018,14 +1045,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27FE18C71CB1ACB300476BCB /* SentenceTableView.swift in Sources */,
 				276498F71CAA0E2F0009DF79 /* PicTalkSwift.xcdatamodeld in Sources */,
 				275ED1221CAC9361007414D6 /* Notes.swift in Sources */,
+				27FE18941CB197CD00476BCB /* SentenceTableViewCell.swift in Sources */,
 				275ED1201CAC9158007414D6 /* AllPicUICollectionView.swift in Sources */,
 				276498F11CAA0E2F0009DF79 /* ViewController.swift in Sources */,
+				27FE18921CB197BE00476BCB /* SentenceTableViewController.swift in Sources */,
 				276498EF1CAA0E2F0009DF79 /* AppDelegate.swift in Sources */,
+				27FE18C91CB1C50200476BCB /* CategoryTabBarViewController.swift in Sources */,
 				275ED11E1CAC90BD007414D6 /* AllPicCollectionViewCell.swift in Sources */,
+				27FE18901CB142DE00476BCB /* shared.swift in Sources */,
 				275ED1241CAC973A007414D6 /* PicData.swift in Sources */,
 				276499101CAA7E0B0009DF79 /* AllPicCollectionViewController.swift in Sources */,
+				27FE188E1CB1302800476BCB /* CategoriesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
